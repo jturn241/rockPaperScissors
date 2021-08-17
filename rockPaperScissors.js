@@ -44,10 +44,11 @@ function playRound (x, y) {
 }
 
 function game () {
-    let round = 0;
-    while (round < 5) {
+    for (round = 0; round < 5; round++) {
+    //let round = 0;
+    //while (round < 5) {
     playRound();
-    round++;
+    //round++;
     }
     if (playerScore > computerScore) {
         console.log("Congrats you've beat the machine!")
@@ -57,3 +58,6 @@ function game () {
         console.log("Sorry you lost, better luck next time")
     }
 }
+
+const buttons = document.querySelector('.buttons');
+buttons.onclick = () => alert("Hello World");
