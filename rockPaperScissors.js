@@ -9,7 +9,7 @@ let computerPlay = function () {
 }
 
 let playerPlay = function () {
-    playerSelection = prompt("rock, paper or scissors?").toLowerCase();
+    playerSelection = prompt("rock, paper or scissors?").toLowerCase();    
 }
 
 let playerScore = 0;
@@ -17,11 +17,41 @@ let computerScore = 0;
 
 function playRound (x, y) {
     computerPlay();
-    playerPlay();
-    x = playerSelection;
+    //playerPlay();
+    //x = playerSelection;
     y = computerSelection;
     if (x === y) {
-        console.log("It's a tie!")
+        return;
+    } else if (x === "rock" && y === "paper") {
+        computerScore += 1;
+        document.getElementById("scoreComputer").innerHTML = computerScore;
+    } else if (x === "rock" && y === "scissors") {
+        playerScore += 1;
+        document.getElementById("scorePlayer").innerHTML = playerScore;
+    } else if (x === "paper" && y === "rock") {
+        playerScore += 1;
+        document.getElementById("scorePlayer").innerHTML = playerScore;
+    } else if (x === "paper" && y === "scissors") {
+        computerScore += 1;
+        document.getElementById("scoreComputer").innerHTML = computerScore;
+    } else if (x === "scissors" && y === "rock") {
+        computerScore +=1;
+        document.getElementById("scoreComputer").innerHTML = computerScore;
+    } else if (x === "scissors" && y === "paper") {
+        playerScore += 1;
+        document.getElementById("scorePlayer").innerHTML = playerScore;
+    }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        /*     console.log("It's a tie!")
     } else if (x === "rock" && y === "paper") {
         console.log("You lose! paper beats rock")
         computerScore += 1;
@@ -41,7 +71,7 @@ function playRound (x, y) {
         console.log("You win! rock beats scissors")
         playerScore += 1;
     }
-}
+}*/
 
 function game () {
     for (round = 0; round < 5; round++) {
@@ -59,5 +89,14 @@ function game () {
     }
 }
 
-const buttons = document.querySelector('.buttons');
-buttons.onclick = () => alert("Hello World");
+const rock = document.querySelector('#rock')
+rock.onclick = () => playRound("rock");
+
+const scissors = document.querySelector('#scissors')
+scissors.onclick = () => playRound("scissors");
+
+const paper = document.querySelector('#paper')
+paper.onclick = () => playRound("paper");
+
+//const buttons = document.querySelector('.buttons');
+//buttons.onclick = () => playRound ();

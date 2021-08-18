@@ -11,6 +11,28 @@ body {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     
 }
+
+.left {
+    width: 200px;
+    height: 80px;
+    background-color: rgb(115, 185, 250);
+    padding: 10px 50px 10px 25px;
+    display: inline-block;
+    border-radius: .5em;
+    text-align: center;
+
+}
+
+.right {
+    width: 200px;
+    height: 80px;
+    /*display: inline-block;*/
+    float: right;
+    padding: 10px 50px 10px 25px;
+    background-color: rgb(115, 185, 250);
+    border-radius: .5em;
+    text-align: center;
+}
 .main {
     width: 600px;
     margin: 5em auto;
@@ -21,6 +43,7 @@ body {
     text-align: center;
     color: yellow;
 }
+
 a:link, a:visited {
     color: #38488f;
     text-decoration: none;
@@ -53,4 +76,8 @@ a:link, a:visited {
 #paper {
     background-color:darkkhaki;
     margin-left: 2em;
+}
+
+#scorePlayer {
+    text-align: center;
 }
